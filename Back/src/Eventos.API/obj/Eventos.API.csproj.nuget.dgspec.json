@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj": {}
+    "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj": {}
   },
   "projects": {
-    "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj": {
+    "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
+        "projectUniqueName": "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj",
         "projectName": "Eventos.API",
-        "projectPath": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
+        "projectPath": "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj",
         "packagesPath": "C:\\Users\\talit\\.nuget\\packages\\",
-        "outputPath": "C:\\Eventos\\back\\src\\eventos.api\\obj\\",
+        "outputPath": "C:\\Eventos\\back\\src\\Eventos.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\talit\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,7 +25,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj": {
+                "projectPath": "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -38,6 +42,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -77,6 +85,183 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj",
+        "projectName": "Eventos.Application",
+        "projectPath": "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj",
+        "packagesPath": "C:\\Users\\talit\\.nuget\\packages\\",
+        "outputPath": "C:\\Eventos\\back\\src\\Eventos.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talit\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj": {
+                "projectPath": "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj"
+              },
+              "C:\\Eventos\\back\\src\\Eventos.Persistence\\Eventos.Persistence.csproj": {
+                "projectPath": "C:\\Eventos\\back\\src\\Eventos.Persistence\\Eventos.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj",
+        "projectName": "Eventos.Domain",
+        "projectPath": "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj",
+        "packagesPath": "C:\\Users\\talit\\.nuget\\packages\\",
+        "outputPath": "C:\\Eventos\\back\\src\\Eventos.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talit\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Eventos\\back\\src\\Eventos.Persistence\\Eventos.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Eventos\\back\\src\\Eventos.Persistence\\Eventos.Persistence.csproj",
+        "projectName": "Eventos.Persistence",
+        "projectPath": "C:\\Eventos\\back\\src\\Eventos.Persistence\\Eventos.Persistence.csproj",
+        "packagesPath": "C:\\Users\\talit\\.nuget\\packages\\",
+        "outputPath": "C:\\Eventos\\back\\src\\Eventos.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\talit\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj": {
+                "projectPath": "C:\\Eventos\\back\\src\\Eventos.Domain\\Eventos.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

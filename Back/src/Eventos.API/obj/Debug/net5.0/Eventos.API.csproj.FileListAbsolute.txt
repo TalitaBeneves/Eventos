@@ -55,3 +55,13 @@ C:\Eventos\back\src\eventos.api\bin\Debug\net5.0\runtimes\win-arm\native\e_sqlit
 C:\Eventos\back\src\eventos.api\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Eventos\back\src\eventos.api\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Eventos\back\src\eventos.api\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Eventos\back\src\Eventos.Api\bin\Debug\net5.0\Eventos.Application.dll
+C:\Eventos\back\src\Eventos.Api\bin\Debug\net5.0\Eventos.Domain.dll
+C:\Eventos\back\src\Eventos.Api\bin\Debug\net5.0\Eventos.Persistence.dll
+C:\Eventos\back\src\Eventos.Api\bin\Debug\net5.0\Eventos.Application.pdb
+C:\Eventos\back\src\Eventos.Api\bin\Debug\net5.0\Eventos.Domain.pdb
+C:\Eventos\back\src\Eventos.Api\bin\Debug\net5.0\Eventos.Persistence.pdb
+C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
