@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj": {}
+    "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj": {}
   },
   "projects": {
-    "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj": {
+    "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj",
+        "projectUniqueName": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
         "projectName": "Eventos.API",
-        "projectPath": "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj",
+        "projectPath": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
         "packagesPath": "C:\\Users\\talit\\.nuget\\packages\\",
-        "outputPath": "C:\\Eventos\\back\\src\\Eventos.API\\obj\\",
+        "outputPath": "C:\\Eventos\\back\\src\\eventos.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\talit\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZT3tXx5g8SdtAPbFyM/xY08kttwLnzNOLTu3biQqHC6YperaLSEE7DB8lUVHK51e+/4UeAY5kUYP7dGgaZZSHA==",
+  "dgSpecHash": "0dwZWZP8XXci6P/AGULA+ZbskfqSseAQh1ndQsjiclo5cw+8Tw61DVds3MqnE0CiVgM+vycMRCo35iYNXgVYaA==",
   "success": true,
-  "projectFilePath": "C:\\Eventos\\back\\src\\Eventos.API\\Eventos.API.csproj",
+  "projectFilePath": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talit\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.2\\microsoft.aspnetcore.jsonpatch.5.0.2.nupkg.sha512",
