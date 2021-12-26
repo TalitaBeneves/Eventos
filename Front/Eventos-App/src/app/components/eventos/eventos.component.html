@@ -1,0 +1,70 @@
+<app-titulo class="m-3" [titulo]="'Eventos'"></app-titulo>
+
+<div class="form-inline">
+  <div class="form-group mb-2">
+    <input
+      type="text"
+      class="form-control mr-2"
+      placeholder= "buscar"
+      [(ngModel)]="filtroLista"
+    >
+  </div>
+</div>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <button type="button" class="btn btn-outline-light btn-sm" (click)="MostraImg = !MostraImg">
+          <i class="{{!MostraImg ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
+          {{!MostraImg ? 'exibir' : 'ocultar'}}
+        </button>
+      </th>
+      <th class="text-center">#</th>
+      <th class="text-center">Tema</th>
+      <th class="text-center">Local</th>
+      <th class="text-center">Data</th>
+      <th class="text-center">Qtd Pessoas</th>
+      <th class="text-center">Lote</th>
+      <th class="text-center">Opções</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="eventos && eventos.length" class="text-center">
+    <tr *ngFor="let evento of eventosFiltrados">
+      <td>
+        <img
+        [collapse]="!MostraImg"
+        [isAnimated]="true"
+          src="/assets/image/{{evento.imagemURL}}"
+          alt="imagem do evento"
+          width="120px"
+          height="70px"
+        >
+      </td>
+      <td>{{evento.id}}</td>
+      <td>{{evento.tema}}</td>
+      <td>{{evento.local}}</td>
+      <td>{{evento.dataEvento | DateTime}}</td>
+      <td>{{evento.qtdPessoa}}</td>
+      <td>{{evento.lotes[1].nome | uppercase}}</td>
+      <td>
+        <button type="button" class="btn btn-info btn-sm mr-2" tooltip="Editar"><i class="fas fa-pen"></i></button>
+        <button type="button" class="btn btn-danger btn-sm" tooltip="Excluir" (click)="openModal(template)"><i class="far fa-trash-alt"></i></button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!eventos.length">
+    <tr>
+      <td colspan="8" class="text-center p-5">
+        <h4>Nenhum evento encontrado!</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar esse Evento?</p>
+    <button type="button" class="btn btn-outline-success mr-2" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-secondary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
