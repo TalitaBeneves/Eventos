@@ -51,7 +51,7 @@
         <td>{{evento.tema}}</td>
         <td class="d-none d-md-table-cell">{{evento.local}}</td>
         <td>{{evento.dataEvento | DateTime}}</td>
-        <td class="d-none d-md-table-cell">{{evento.qtdPessoa}}</td>
+        <td class="d-none d-md-table-cell">{{evento.qtdPessoas}}</td>
         <td class="d-none d-md-table-cell">{{evento.lotes[1].nome | uppercase}}</td>
         <td>
           <button type="button" class="btn btn-info btn-sm mr-2 d-none d-md-table-cell" tooltip="Editar" (click)="detalheEvento(evento.id)">

@@ -3,3 +3,18 @@
 @import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import "../node_modules/bootswatch/dist/Quartz/bootstrap.min.css";
+
+::-webkit-scrollbar {
+	width:10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background:#333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a818ad;
+  border-radius: 40px;
+}
+
