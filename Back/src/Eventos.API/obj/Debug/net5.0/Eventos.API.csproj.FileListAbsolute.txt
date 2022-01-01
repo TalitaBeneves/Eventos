@@ -65,3 +65,5 @@ C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.
 C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Eventos\back\src\Eventos.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Eventos\back\src\eventos.api\bin\Debug\net5.0\AutoMapper.dll
+C:\Eventos\back\src\eventos.api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

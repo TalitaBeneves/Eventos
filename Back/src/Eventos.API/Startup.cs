@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
+using System;
+using ProEventos.Application;
 
 namespace Eventos.API
 {
@@ -34,6 +37,7 @@ namespace Eventos.API
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore
                     );
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IEventoService, EventoService>();
             services.AddScoped<IGeralPersist, GeralPersist>();

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0dwZWZP8XXci6P/AGULA+ZbskfqSseAQh1ndQsjiclo5cw+8Tw61DVds3MqnE0CiVgM+vycMRCo35iYNXgVYaA==",
+  "dgSpecHash": "7aqHrzLdG+TNkHXYAlwu8mfk/qKc7OCE4LrRk9lP8GHJluNYhq+7HdxprCWNG1fd4YNsNOCcPaJAO0pznnHR4Q==",
   "success": true,
   "projectFilePath": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\talit\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\talit\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.2\\microsoft.aspnetcore.jsonpatch.5.0.2.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.2\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.2.nupkg.sha512",
@@ -43,7 +45,8 @@
     "C:\\Users\\talit\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "C:\\Users\\talit\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\talit\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\talit\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
