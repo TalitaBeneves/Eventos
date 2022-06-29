@@ -1608,11 +1608,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
+      "projectUniqueName": "P:\\Eventos\\Back\\src\\Eventos.API\\Eventos.API.csproj",
       "projectName": "Eventos.API",
-      "projectPath": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
+      "projectPath": "P:\\Eventos\\Back\\src\\Eventos.API\\Eventos.API.csproj",
       "packagesPath": "C:\\Users\\talit\\.nuget\\packages\\",
-      "outputPath": "C:\\Eventos\\back\\src\\eventos.api\\obj\\",
+      "outputPath": "P:\\Eventos\\Back\\src\\Eventos.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\talit\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1627,8 +1627,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj": {
-              "projectPath": "C:\\Eventos\\back\\src\\Eventos.Application\\Eventos.Application.csproj"
+            "P:\\Eventos\\Back\\src\\Eventos.Application\\Eventos.Application.csproj": {
+              "projectPath": "P:\\Eventos\\Back\\src\\Eventos.Application\\Eventos.Application.csproj"
             }
           }
         }

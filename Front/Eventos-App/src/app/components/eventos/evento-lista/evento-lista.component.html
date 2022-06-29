@@ -5,13 +5,16 @@
         <input
           type="text"
           class="form-control mr-3"
-          placeholder= "buscar"
+          placeholder="buscar"
           [(ngModel)]="filtroLista"
-        >
+        />
       </div>
     </div>
     <div>
-      <a class="d-flex btn btn-primary p-1 mb-2 ml-3" routerLink="/eventos/detalhe">
+      <a
+        class="d-flex btn btn-primary p-1 mb-2 ml-3"
+        routerLink="/eventos/detalhe"
+      >
         <i class="fa fa-plus-circle"></i>
         <b class="d-none d-sm-block">Novo</b>
       </a>
@@ -21,9 +24,13 @@
     <thead class="thead-dark">
       <tr>
         <th class="d-none d-md-table-cell">
-          <button type="button" class="btn btn-outline-light btn-sm" (click)="MostraImg = !MostraImg">
-            <i class="{{!MostraImg ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
-            {{!MostraImg ? 'exibir' : 'ocultar'}}
+          <button
+            type="button"
+            class="btn btn-outline-light btn-sm"
+            (click)="MostraImg = !MostraImg"
+          >
+            <i class="{{ !MostraImg ? 'fa fa-eye' : 'fa fa-eye-slash' }}"></i>
+            {{ !MostraImg ? "exibir" : "ocultar" }}
           </button>
         </th>
         <th class="text-center">#</th>
@@ -39,25 +46,37 @@
       <tr *ngFor="let evento of eventosFiltrados">
         <td class="d-none d-md-table-cell">
           <img
-          [collapse]="!MostraImg"
-          [isAnimated]="true"
-            src="/assets/image/{{evento.imagemURL}}"
+            [collapse]="!MostraImg"
+            [isAnimated]="true"
+            src="/assets/image/{{ evento.imagemURL }}"
             alt="imagem do evento"
             width="120px"
             height="70px"
-          >
+          />
         </td>
-        <td>{{evento.id}}</td>
-        <td>{{evento.tema}}</td>
-        <td class="d-none d-md-table-cell">{{evento.local}}</td>
-        <td>{{evento.dataEvento | DateTime}}</td>
-        <td class="d-none d-md-table-cell">{{evento.qtdPessoas}}</td>
-        <td class="d-none d-md-table-cell">{{evento.lotes[1].nome | uppercase}}</td>
+        <td>{{ evento.id }}</td>
+        <td>{{ evento.tema }}</td>
+        <td class="d-none d-md-table-cell">{{ evento.local }}</td>
+        <td>{{ evento.dataEvento }}</td>
+        <td class="d-none d-md-table-cell">{{ evento.qtdPessoas }}</td>
+        <td class="d-none d-md-table-cell">
+          {{ evento.lotes[1]?.nome | uppercase }}
+        </td>
         <td>
-          <button type="button" class="btn btn-info btn-sm mr-2 d-none d-md-table-cell" tooltip="Editar" (click)="detalheEvento(evento.id)">
+          <button
+            type="button"
+            class="btn btn-info btn-sm mr-2 d-none d-md-table-cell"
+            tooltip="Editar"
+            (click)="detalheEvento(evento.id)"
+          >
             <i class="fas fa-pen"></i>
           </button>
-          <button type="button" class="btn btn-danger btn-sm" tooltip="Excluir" (click)="openModal(template)">
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            tooltip="Excluir"
+            (click)="openModal(template)"
+          >
             <i class="far fa-trash-alt"></i>
           </button>
         </td>
@@ -77,7 +96,15 @@
 <ng-template #template>
   <div class="modal-body text-center">
     <p>Tem certeza que quer deletar esse Evento?</p>
-    <button type="button" class="btn btn-outline-success mr-2" (click)="confirm()" >Sim</button>
-    <button type="button" class="btn btn-secondary" (click)="decline()" >Não</button>
+    <button
+      type="button"
+      class="btn btn-outline-success mr-2"
+      (click)="confirm()"
+    >
+      Sim
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="decline()">
+      Não
+    </button>
   </div>
 </ng-template>

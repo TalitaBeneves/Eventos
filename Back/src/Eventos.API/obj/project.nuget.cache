@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7aqHrzLdG+TNkHXYAlwu8mfk/qKc7OCE4LrRk9lP8GHJluNYhq+7HdxprCWNG1fd4YNsNOCcPaJAO0pznnHR4Q==",
+  "dgSpecHash": "uViY/nJ7Pbyyx6tVKbtWAlXpyuwqiqroQkfPJ0EsihapVe9HpNc/GdaLM7WI6Sgx5aZ7jNZPmFibltcpoPhZ+A==",
   "success": true,
-  "projectFilePath": "C:\\Eventos\\back\\src\\eventos.api\\Eventos.API.csproj",
+  "projectFilePath": "P:\\Eventos\\Back\\src\\Eventos.API\\Eventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talit\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\talit\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
