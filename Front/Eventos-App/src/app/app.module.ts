@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -60,14 +61,15 @@ defineLocale('pt-br', ptBrLocale);
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxCurrencyModule,
     CollapseModule.forRoot(),
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     ToastrModule.forRoot({
-      timeOut: 3000,
-      positionClass: 'toast-bottom-right',
+      timeOut: 2000,
+      positionClass: 'toast-top-center',
       preventDuplicates: true,
       progressBar: true,
     }),

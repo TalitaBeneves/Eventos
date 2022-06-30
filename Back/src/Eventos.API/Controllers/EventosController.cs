@@ -77,7 +77,7 @@ namespace Eventos.API.Controllers
       try
       {
         var evento = await _eventoService.AddEventos(model);
-        // if (evento == null) return NoContent();
+        if (evento == null) return NoContent();
 
         return Ok(evento);
       }
