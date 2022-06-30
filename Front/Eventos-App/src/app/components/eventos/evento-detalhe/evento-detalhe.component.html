@@ -7,17 +7,17 @@
           <input
             type="text"
             class="form-control"
-            [ngClass]="{'is-invalid': f.tema.errors && f.tema.touched}"
+            [ngClass]="cssValidator(f.tema)"
             formControlName="tema"
             placeholder="Insira o Tema"
-          >
+          />
           <div *ngIf="f.tema.errors?.required" class="invalid-feedback">
             Tema obrigatório
           </div>
           <div *ngIf="f.tema.errors?.minlength" class="invalid-feedback">
             Tema deve ter no minimo 4 caracteres.
           </div>
-          <div  *ngIf="f.tema.errors?.maxlength" class="invalid-feedback">
+          <div *ngIf="f.tema.errors?.maxlength" class="invalid-feedback">
             Tema deve ter no máximo 50 caracteres.
           </div>
         </div>
@@ -28,9 +28,10 @@
           <input
             type="text"
             class="form-control is-invalid"
-            [ngClass]="{'is-invalid': f.local.errors && f.local.touched}"
+            [ngClass]="cssValidator(f.local)"
             formControlName="local"
-            placeholder="Insira o Local">
+            placeholder="Insira o Local"
+          />
           <div *ngIf="f.local.errors?.required" class="invalid-feedback">
             Local obrigatório
           </div>
@@ -39,11 +40,12 @@
         <div class="form-group col-md-4">
           <label>Data e Hora</label>
           <input
-            
             class="form-control is-invalid"
             formControlName="dataEvento"
-            [ngClass]="{'is-invalid': f.dataEvento.errors && f.dataEvento.touched}"
-          >
+            bsDatepicker
+            [bsConfig]="bsConfig"
+            [ngClass]="cssValidator(f.dataEvento)"
+          />
           <div *ngIf="f.dataEvento.errors?.required" class="invalid-feedback">
             Data e Hora
           </div>
@@ -57,12 +59,15 @@
             type="number"
             class="form-control is-invalid"
             formControlName="qtdPessoas"
-            [ngClass]="{'is-invalid': f.qtdPessoas.errors && f.qtdPessoas.touched}"
-          >
+            [ngClass]="cssValidator(f.qtdPessoas)"
+          />
           <div *ngIf="f.qtdPessoas.errors?.required" class="invalid-feedback">
             Qtd Pessoas obrigatório
           </div>
-          <div *ngIf="f.qtdPessoas.errors?.max && f.qtdPessoas.touched" class="invalid-feedback">
+          <div
+            *ngIf="f.qtdPessoas.errors?.max && f.qtdPessoas.touched"
+            class="invalid-feedback"
+          >
             Qtd Pessoas deve ser no máximo 5200.
           </div>
         </div>
@@ -73,8 +78,9 @@
             type="text"
             class="form-control is-invalid"
             formControlName="telefone"
-            [ngClass]="{'is-invalid': f.telefone.errors && f.telefone.touched}"
-            placeholder="(000) 90000-0000">
+            [ngClass]="cssValidator(f.telefone)"
+            placeholder="(000) 90000-0000"
+          />
           <div *ngIf="f.telefone.errors?.required" class="invalid-feedback">
             Telefone obrigatório
           </div>
@@ -86,8 +92,9 @@
             type="email"
             class="form-control is-invalid"
             formControlName="email"
-            [ngClass]="{'is-invalid': f.email.errors && f.email.touched}"
-            placeholder="Insira o e-mail">
+            [ngClass]="cssValidator(f.email)"
+            placeholder="Insira o e-mail"
+          />
           <div *ngIf="f.email.errors?.email" class="invalid-feedback">
             E-mail deve ser válido
           </div>
@@ -99,8 +106,9 @@
             type="text"
             class="form-control is-invalid"
             formControlName="imagemURL"
-            [ngClass]="{'is-invalid': f.imagemURL.errors && f.imagemURL.touched}"
-            placeholder="Insira a imagem">
+            [ngClass]="cssValidator(f.imagemURL)"
+            placeholder="Insira a imagem"
+          />
           <div *ngIf="f.imagemURL.errors?.required" class="invalid-feedback">
             Imagem obrigatório
           </div>
@@ -110,10 +118,13 @@
 
     <div class="card-footer">
       <div class="d-flex">
-        <button class="btn btn-outline-secondary mr-auto border" (click)="resetForm()">
+        <button
+          class="btn btn-outline-secondary mr-auto border"
+          (click)="resetForm()"
+        >
           Cancelar Alteração
         </button>
-        <button class="btn btn-success" [disabled]="!form.valid">
+        <button class="btn btn-success" [disabled]="!form.valid" (click)="salvarAlteracao()">
           <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
           Salvar Evento
         </button>
