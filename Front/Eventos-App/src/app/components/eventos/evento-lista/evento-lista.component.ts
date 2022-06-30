@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Evento } from 'src/app/models/Evento';
 import { EventoService } from 'src/app/services/evento.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-evento-lista',
@@ -56,12 +57,19 @@ export class EventoListaComponent implements OnInit {
     setTimeout(() => {}, 2000);
   }
 
+  motraImg(imagemURL: string): string {
+    return imagemURL !== ''
+      ? `${environment.apiURL}resources/images/${imagemURL}`
+      : 'assets/image/semImagem.jpeg';
+  }
+
   public getEventos(): void {
     this.eventoService
       .getEventos()
       .subscribe(
         (eventos: Evento[]) => {
           this.eventos = eventos;
+          console.log(eventos)
           this.eventosFiltrados = this.eventos;
         },
         (error: any) => {

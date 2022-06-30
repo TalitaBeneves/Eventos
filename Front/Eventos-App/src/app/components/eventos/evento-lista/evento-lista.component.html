@@ -48,7 +48,7 @@
           <img
             [collapse]="!MostraImg"
             [isAnimated]="true"
-            src="/assets/image/{{ evento.imagemURL }}"
+            [src]="motraImg(evento.imagemURL)"
             alt="imagem do evento"
             width="120px"
             height="70px"
@@ -58,7 +58,7 @@
         <td>{{ evento.tema }}</td>
         <td class="d-none d-md-table-cell">{{ evento.local }}</td>
         <td>{{ evento.dataEvento }}</td>
-        <td class="d-none d-md-table-cell">{{ evento.qtdPessoas }}</td>
+        <td class="d-none d-md-table-cell">{{ evento.qtdPessoa }}</td>
         <td class="d-none d-md-table-cell">
           {{ evento.lotes[0]?.nome | uppercase }}
         </td>
