@@ -25,6 +25,8 @@ namespace Eventos.Application.Dtos
 
     [EmailAddress]
     public string Email { get; set; }
+    public int UserId { get; set; }
+    public UserDto UserDto { get; set; }
 
     public IEnumerable<LoteDto> Lotes { get; set; }
     public IEnumerable<RedeSocialDto> RedesSociais { get; set; }
