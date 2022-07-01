@@ -1,4 +1,5 @@
-import { HttpClientModule } from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,12 +35,14 @@ import { TituloComponent } from './shared/titulo/titulo.component';
 import { EventoService } from './services/evento.service';
 
 import { DateTimePipe } from './helpers/Date.pipe';
+import { HomeComponent } from './components/home/home.component';
 
 defineLocale('pt-br', ptBrLocale);
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     EventosComponent,
     PalestrantesComponent,
     NavComponent,
@@ -76,8 +79,14 @@ defineLocale('pt-br', ptBrLocale);
     NgxSpinnerModule,
     FormsModule,
   ],
-  providers: [EventoService],
+  providers: [
+    EventoService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

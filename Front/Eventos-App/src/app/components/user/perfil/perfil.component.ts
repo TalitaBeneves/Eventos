@@ -1,45 +1,105 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControlOptions, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControlOptions,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
+import { UserUpdate } from './../../../models/identity/UserUpdate';
+import { AccountService } from './../../../services/account.service';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss']
+  styleUrls: ['./perfil.component.scss'],
 })
 export class PerfilComponent implements OnInit {
-
   form: FormGroup | any;
+  userUpdate = {} as UserUpdate;
+
+  constructor(
+    private fb: FormBuilder,
+    private accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService
+  ) {}
+
+  ngOnInit(): void {
+    this.validation();
+    this.carregarUsuario();
+  }
 
   get f(): any {
     return this.form.controls;
   }
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
-    this.validation();
+  onSubmit() {
+    this.atualizarUsuario();
   }
 
-  public validation(): void {
+  atualizarUsuario() {
+    this.userUpdate = { ...this.form.value };
+    this.spinner.show();
+    this.accountService
+      .updateUser(this.userUpdate)
+      .subscribe(
+        () => this.toastr.success('Usuário atualizado!', 'Sucesso'),
+        (e) => {
+          this.toastr.error('Erro ao atualiza usuário!', 'Erro!');
+          console.error(e);
+        }
+      )
+      .add(() => this.spinner.hide());
+  }
 
+  private carregarUsuario() {
+    this.spinner.show();
+    this.accountService
+      .getUser()
+      .subscribe(
+        (res: UserUpdate) => {
+          this.userUpdate = res;
+          this.form.patchValue(this.userUpdate);
+          this.toastr.success('Usuário Carregado', 'Sucesso!');
+        },
+        (e) => {
+          this.toastr.error('Erro ao carregar Usuário', 'Erro!');
+          console.error(e);
+          this.router.navigate(['/dashboard']);
+        }
+      )
+      .add(() => this.spinner.hide());
+  }
+
+  private validation(): void {
     const formOptions: AbstractControlOptions = {
-      validators: ValidatorField.MustMatch('senha', 'confirmeSenha')
+      validators: ValidatorField.MustMatch('password', 'confirmePassword'),
     };
 
-    this.form = this.fb.group({
-
-      nome: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
-      sobreNome: ['', Validators.required],
-      email: ['', Validators.required],
-      telefone:  ['', Validators.required],
-      senha: ['', [Validators.required, Validators.minLength(6)]],
-      confirmeSenha: ['', Validators.required],
-    }, formOptions);
+    this.form = this.fb.group(
+      {
+        userName: [''],
+        imagemURL: [''],
+        titulo: ['NaoInformado', Validators.required],
+        primeiroNome: ['', Validators.required],
+        ultimoNome: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        phoneNumber: ['', [Validators.required]],
+        descricao: ['', Validators.required],
+        funcao: ['NaoInformado', Validators.required],
+        password: ['', [Validators.minLength(4), Validators.nullValidator]],
+        confirmePassword: ['', Validators.nullValidator],
+      },
+      formOptions
+    );
   }
-
+  
   resetForm(): void {
     this.form.reset();
   }
-
 }
