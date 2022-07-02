@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
 using Eventos.Domain;
+using Eventos.Persistence.Models;
 
 namespace Eventos.Persistence.Contratos
 {
-    public interface IPalestrantePersist
-    {
-      Task<Palestrante[]> GetAllPalestrantesByNomeAsync(string nome, bool includeEventos);
-      Task<Palestrante[]> GetAllPalestrantesAsync(bool includeEventos);
-      Task<Palestrante> GetPalestranteByIdAsync(int palestranteId, bool includeEventos);
-    }
+  public interface IPalestrantePersist : IGeralPersist
+  {
+    Task<PageList<Palestrante>> GetAllPalestrantesAsync(PageParams pageParams, bool includeEventos = false);
+    Task<Palestrante> GetPalestranteByUserIdAsync(int userId, bool includeEventos = false);
+  }
 }
