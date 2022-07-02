@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   AbstractControlOptions,
   FormBuilder,
@@ -6,8 +6,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+
 import { ValidatorField } from 'src/app/helpers/ValidatorField';
 import { UserUpdate } from 'src/app/models/identity/UserUpdate';
 import { AccountService } from 'src/app/services/account.service';
@@ -18,7 +20,7 @@ import { AccountService } from 'src/app/services/account.service';
   styleUrls: ['./perfil-detalhe.component.scss'],
 })
 export class PerfilDetalheComponent implements OnInit {
-  
+  @Output() changeFormValeu = new EventEmitter();
   form: FormGroup | any;
   userUpdate = {} as UserUpdate;
 
@@ -33,6 +35,16 @@ export class PerfilDetalheComponent implements OnInit {
   ngOnInit() {
     this.validation();
     this.carregarUsuario();
+    this.verificaForm();
+  }
+
+  private verificaForm() {
+    this.form.valueChanges.subscribe(
+      () => {
+        this.changeFormValeu.emit({ ...this.form.value });
+      },
+      () => {}
+    );
   }
 
   get f(): any {

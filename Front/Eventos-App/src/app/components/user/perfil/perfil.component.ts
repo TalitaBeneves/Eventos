@@ -19,9 +19,14 @@ import { AccountService } from './../../../services/account.service';
 })
 export class PerfilComponent implements OnInit {
   form: FormGroup | any;
-  userUpdate = {} as UserUpdate;
+  usuario = {} as UserUpdate;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  setFormValue(usuario: UserUpdate): void {
+    this.usuario = usuario;
+    console.log( this.usuario)
+  }
 }
