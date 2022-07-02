@@ -10,6 +10,7 @@ P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Eventos.API.pdb
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\AutoMapper.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Humanizer.dll
+P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -28,6 +29,8 @@ P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.Extensions.Identity.C
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.OpenApi.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Newtonsoft.Json.dll
@@ -75,6 +78,3 @@ P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.dll
 P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\ref\Eventos.API.dll
 P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.pdb
 P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.genruntimeconfig.cache
-P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
-P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

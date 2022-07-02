@@ -1,17 +1,16 @@
 using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Eventos.Application.Contratos;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-// using Eventos.Api.Helpers;
-// using Eventos.API.Extensions;
-using Eventos.Application.Dtos;
-using Eventos.API.Extensions;
+using Microsoft.AspNetCore.Mvc;
 using Eventos.API.Helpers;
+using Eventos.API.Extensions;
+using Eventos.Application.Contratos;
+using Eventos.Application.Dtos;
 
 namespace Eventos.API.Controllers
 {
@@ -23,14 +22,14 @@ namespace Eventos.API.Controllers
 
     private readonly IAccountService _accountService;
     private readonly ITokenService _tokenService;
-    private readonly Util _util;
+    private readonly IUtil _util;
     private readonly string _destino = "Perfil";
 
-    public AccountController(IAccountService accountService, Util util, ITokenService tokenService)
+    public AccountController(IAccountService accountService, ITokenService tokenService, IUtil util)
     {
+      _util = util;
       _accountService = accountService;
       _tokenService = tokenService;
-      _util = util;
     }
     [HttpGet("GetUser")]
     public async Task<IActionResult> GetUser()
@@ -143,14 +142,14 @@ namespace Eventos.API.Controllers
           _util.DeleteImage(user.ImagemURL, _destino);
           user.ImagemURL = await _util.SaveImage(file, _destino);
         }
-        var EventoRetorno = await _accountService.UpdateAccount(user);
+        var userRetorno = await _accountService.UpdateAccount(user);
 
-        return Ok(EventoRetorno);
+        return Ok(userRetorno);
       }
       catch (Exception ex)
       {
         return this.StatusCode(StatusCodes.Status500InternalServerError,
-            $"Erro ao tentar realizar upload de foto do usuário. Erro: {ex.Message}");
+            $"Erro ao tentar realizar upload de Foto do Usuário. Erro: {ex.Message}");
       }
     }
   }
