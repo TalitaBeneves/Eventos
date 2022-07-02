@@ -16,7 +16,6 @@ namespace Eventos.API.Helpers
     {
       _hostEnvironment = hostEnvironment;
     }
-
     public async Task<string> SaveImage(IFormFile imageFile, string destino)
     {
       string imageName = new String(Path.GetFileNameWithoutExtension(imageFile.FileName)

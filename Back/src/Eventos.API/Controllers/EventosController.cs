@@ -20,14 +20,16 @@ namespace Eventos.API.Controllers
   public class EventosController : ControllerBase
   {
     private readonly IEventoService _eventoService;
-    private readonly Util _util;
+
     private readonly IAccountService _accountService;
+    private readonly IUtil _util;
     private readonly string _destino = "Images";
 
-    public EventosController(IEventoService eventoService, Util util, IAccountService accountService)
+    public EventosController(IEventoService eventoService, IAccountService accountService, IUtil util)
     {
-      _util = util;
+  
       _accountService = accountService;
+      _util = util;
       _eventoService = eventoService;
 
     }
@@ -156,9 +158,6 @@ namespace Eventos.API.Controllers
             $"Erro ao tentar deletar eventos. Erro: {ex.Message}");
       }
     }
-
-
-
   }
 }
 

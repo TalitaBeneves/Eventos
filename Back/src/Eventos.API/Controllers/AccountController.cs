@@ -1,5 +1,4 @@
 using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -23,7 +22,9 @@ namespace Eventos.API.Controllers
     private readonly IAccountService _accountService;
     private readonly ITokenService _tokenService;
     private readonly IUtil _util;
+
     private readonly string _destino = "Perfil";
+
 
     public AccountController(IAccountService accountService, ITokenService tokenService, IUtil util)
     {
@@ -31,6 +32,7 @@ namespace Eventos.API.Controllers
       _accountService = accountService;
       _tokenService = tokenService;
     }
+
     [HttpGet("GetUser")]
     public async Task<IActionResult> GetUser()
     {

@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { AccountService } from './../services/account.service';
 import { Injectable } from '@angular/core';
 import {
@@ -6,13 +7,16 @@ import {
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { User } from '../models/identity/User';
-import { take, map } from 'rxjs/operators';
+import { take, map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-  constructor(private accountService: AccountService) {}
+  constructor(
+    private accountService: AccountService,
+    private toastr: ToastrService
+  ) {}
 
   intercept(
     request: HttpRequest<unknown>,
@@ -21,7 +25,7 @@ export class JwtInterceptor implements HttpInterceptor {
     let currentUser: User;
 
     this.accountService.currentUser$.pipe(take(1)).subscribe((user) => {
-      currentUser = user
+      currentUser = user;
 
       if (currentUser) {
         request = request.clone({
@@ -32,6 +36,18 @@ export class JwtInterceptor implements HttpInterceptor {
       }
     });
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      catchError((error) => {
+        if (error) {
+          localStorage.removeItem('user');
+          this.toastr.error('Seu token expirou!', 'Erro!');
+
+          const time = setTimeout(() => {
+            window.location.reload();
+          }, 2000);
+        }
+        return throwError(error);
+      })
+    );
   }
 }
