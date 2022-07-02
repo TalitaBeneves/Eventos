@@ -78,4 +78,3 @@ P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.genruntimeconfig.ca
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 P:\Eventos\Back\src\Eventos.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.csproj.CopyComplete

@@ -5,8 +5,8 @@
         <input
           type="text"
           class="form-control mr-3"
-          placeholder="buscar"
-          [(ngModel)]="filtroLista"
+          placeholder="Buscar"
+          (input)="filtrarEventos($event.target)"
         />
       </div>
     </div>
@@ -43,7 +43,7 @@
       </tr>
     </thead>
     <tbody *ngIf="eventos && eventos.length" class="text-center">
-      <tr *ngFor="let evento of eventosFiltrados">
+      <tr *ngFor="let evento of eventos">
         <td class="d-none d-md-table-cell">
           <img
             [collapse]="!MostraImg"
@@ -91,6 +91,22 @@
       </tr>
     </tfoot>
   </table>
+
+  <div class="d-flex justify-content-center">
+    <pagination
+      [boundaryLinks]="true"
+      [totalItems]="pagination?.totalItems"
+      [itemsPerPage]="pagination?.itemsPerPage"
+      [(ngModel)]="pagination.currentPage"
+      (pageChanged)="pageChanged($event)"
+      pageBtnClass="btn"
+      previousText="&lsaquo;"
+      nextText="&rsaquo;"
+      firstText="&laquo;"
+      lastText="&raquo;"
+    >
+    </pagination>
+  </div>
 </div>
 
 <ng-template #template>

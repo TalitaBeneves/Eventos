@@ -2,6 +2,7 @@ using AutoMapper;
 using Eventos.Application.Dtos;
 using Eventos.Domain;
 using Eventos.Domain.Identity;
+using Eventos.Persistence.Models;
 
 namespace Eventos.API.Helpers
 {

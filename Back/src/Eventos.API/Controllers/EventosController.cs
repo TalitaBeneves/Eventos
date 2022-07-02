@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using Eventos.API.Extensions;
 using Microsoft.AspNetCore.Authorization;
+using Eventos.Persistence.Models;
 
 namespace Eventos.API.Controllers
 {
@@ -29,12 +30,14 @@ namespace Eventos.API.Controllers
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get([FromQuery]PageParams pageParams)
     {
       try
       {
-        var eventos = await _eventoService.GetAllEventosAsync(User.GetUserId(), true);
+        var eventos = await _eventoService.GetAllEventosAsync(User.GetUserId(), pageParams, true);
         if (eventos == null) return NoContent();
+
+        Response.AddPagination(eventos.CurrentPage, eventos.PageSize, eventos.TotalCount, eventos.TotalPages);
 
         return Ok(eventos);
       }
@@ -52,24 +55,6 @@ namespace Eventos.API.Controllers
       try
       {
         var evento = await _eventoService.GetEventoByIdAsync(User.GetUserId(), id, true);
-        if (evento == null) return NoContent();
-
-        return Ok(evento);
-      }
-      catch (Exception ex)
-      {
-        return this.StatusCode(StatusCodes.Status500InternalServerError,
-            $"Erro ao tentar recuperar eventos. Erro: {ex.Message}"
-        );
-      }
-    }
-
-    [HttpGet("{tema}/tema")]
-    public async Task<IActionResult> GetByTema(string tema)
-    {
-      try
-      {
-        var evento = await _eventoService.GetAllEventosByTemaAsync(User.GetUserId(), tema, true);
         if (evento == null) return NoContent();
 
         return Ok(evento);
