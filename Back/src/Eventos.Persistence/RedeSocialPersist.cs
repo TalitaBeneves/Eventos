@@ -21,7 +21,9 @@ namespace Eventos.Persistence
     {
       IQueryable<RedeSocial> query = _context.RedesSociais;
 
-      query = query.AsNoTracking().Where(rs => rs.EventoId == eventoId && rs.Id == id);
+      query = query.AsNoTracking()
+                   .Where(rs => rs.EventoId == eventoId &&
+                                rs.Id == id);
 
       return await query.FirstOrDefaultAsync();
     }
@@ -29,7 +31,9 @@ namespace Eventos.Persistence
     {
       IQueryable<RedeSocial> query = _context.RedesSociais;
 
-      query = query.AsNoTracking().Where(rs => rs.PalestranteId == palestranteId && rs.Id == id);
+      query = query.AsNoTracking()
+                   .Where(rs => rs.PalestranteId == palestranteId &&
+                                rs.Id == id);
 
       return await query.FirstOrDefaultAsync();
     }
@@ -37,7 +41,8 @@ namespace Eventos.Persistence
     {
       IQueryable<RedeSocial> query = _context.RedesSociais;
 
-      query = query.AsNoTracking().Where(rs => rs.EventoId == eventoId);
+      query = query.AsNoTracking()
+                   .Where(rs => rs.EventoId == eventoId);
 
       return await query.ToArrayAsync();
     }
@@ -45,9 +50,11 @@ namespace Eventos.Persistence
     {
       IQueryable<RedeSocial> query = _context.RedesSociais;
 
-      query = query.AsNoTracking().Where(rs => rs.PalestranteId == palestranteId);
+      query = query.AsNoTracking()
+                   .Where(rs => rs.PalestranteId == palestranteId);
 
       return await query.ToArrayAsync();
     }
+
   }
 }

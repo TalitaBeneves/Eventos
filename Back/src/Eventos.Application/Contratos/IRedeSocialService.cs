@@ -6,7 +6,7 @@ using Eventos.Application.Dtos;
 
 namespace Eventos.Application.Contratos
 {
-     public interface IRedeSocialService
+    public interface IRedeSocialService
     {
         Task<RedeSocialDto[]> SaveByEvento(int eventoId, RedeSocialDto[] models);
         Task<bool> DeleteByEvento(int eventoId, int redeSocialId);

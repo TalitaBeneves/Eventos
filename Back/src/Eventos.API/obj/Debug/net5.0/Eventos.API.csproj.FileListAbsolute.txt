@@ -78,3 +78,4 @@ P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.dll
 P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\ref\Eventos.API.dll
 P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.pdb
 P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.genruntimeconfig.cache
+P:\Eventos\Back\src\Eventos.API\obj\Debug\net5.0\Eventos.API.csproj.CopyComplete

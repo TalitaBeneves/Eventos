@@ -24,6 +24,24 @@ export class EventoListaComponent implements OnInit {
   public eventos: Evento[] = [];
   termoBuscaChanged: Subject<string> = new Subject<string>();
 
+  constructor(
+    private eventoService: EventoService,
+    private modalService: BsModalService,
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService,
+    private router: Router
+  ) {}
+
+  public ngOnInit(): void {
+    this.pagination = {
+      currentPage: 1,
+      itemsPerPage: 5,
+      totalItems: 1,
+    } as Pagination;
+
+    this.carregarEventos();
+  }
+
   public filtrarEventos(evt: any): void {
     if (this.termoBuscaChanged.observers.length === 0) {
       this.termoBuscaChanged.pipe(debounceTime(900)).subscribe((filtrarPor) => {
@@ -50,23 +68,6 @@ export class EventoListaComponent implements OnInit {
     this.termoBuscaChanged.next(evt.value);
   }
 
-  constructor(
-    private eventoService: EventoService,
-    private modalService: BsModalService,
-    private toastr: ToastrService,
-    private spinner: NgxSpinnerService,
-    private router: Router
-  ) {}
-
-  public ngOnInit(): void {
-    this.pagination = {
-      currentPage: 1,
-      itemsPerPage: 5,
-      totalItems: 1,
-    } as Pagination;
-
-    this.carregarEventos();
-  }
   motraImg(imagemURL: string): string {
     return imagemURL !== ''
       ? `${environment.apiURL}resources/images/${imagemURL}`

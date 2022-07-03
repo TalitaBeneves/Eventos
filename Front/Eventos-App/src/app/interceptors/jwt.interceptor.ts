@@ -36,18 +36,19 @@ export class JwtInterceptor implements HttpInterceptor {
       }
     });
 
-    return next.handle(request).pipe(
-      catchError((error) => {
-        if (error) {
-          localStorage.removeItem('user');
-          this.toastr.error('Seu token expirou!', 'Erro!');
-
-          const time = setTimeout(() => {
-            window.location.reload();
-          }, 2000);
-        }
-        return throwError(error);
-      })
-    );
+    return next.handle(request)
   }
 }
+// .pipe(
+//   catchError((error) => {
+//     if (error) {
+//       localStorage.removeItem('user');
+//       this.toastr.error('Seu token expirou!', 'Erro!');
+
+//       // const time = setTimeout(() => {
+//       //   window.location.reload();
+//       // }, 2000);
+//     }
+//     return throwError(error);
+//   })
+// );

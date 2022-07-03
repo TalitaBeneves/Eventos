@@ -48,7 +48,6 @@ export class AccountService {
       map((res: User) => {
         const user = res;
         if (user) {
-          console.log(user);
           this.setCurrentUser(user);
         }
       })
@@ -62,7 +61,16 @@ export class AccountService {
 
   setCurrentUser(user: User) {
     localStorage.setItem('user', JSON.stringify(user));
-    console.log('U', user);
     this.currentUserSource.next(user);
+  }
+
+  postUpload(file: File): Observable<UserUpdate> {
+    const fileToUpload = file[0] as File;
+    const formData = new FormData();
+    formData.append('file', fileToUpload);
+
+    return this.http
+      .post<UserUpdate>(`${this.baseUrl}upload-image`, formData)
+      .pipe(take(1));
   }
 }
